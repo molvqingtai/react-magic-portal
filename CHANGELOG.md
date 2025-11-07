@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/molvqingtai/react-magic-portal/compare/v1.3.0...v1.3.1) (2025-11-07)
+
+
+### Performance Improvements
+
+* better position name ([af11ae6](https://github.com/molvqingtai/react-magic-portal/commit/af11ae67e1bf8998067d0cf756128b279ea1f385))
+
 # [1.3.0](https://github.com/molvqingtai/react-magic-portal/compare/v1.2.1...v1.3.0) (2025-10-10)
 
 
