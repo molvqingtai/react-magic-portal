@@ -125,14 +125,14 @@ h2 {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.portal-content.append {
+.portal-content.last {
     background: linear-gradient(135deg, #d4edda, #c3e6cb);
     border-color: #28a745;
     color: #155724;
     animation: portalAppearFromRight 0.4s ease-out 1s forwards;
 }
 
-.portal-content.prepend {
+.portal-content.first {
     background: linear-gradient(135deg, #cce5ff, #b8daff);
     border-color: #007bff;
     color: #004085;

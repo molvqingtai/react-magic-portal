@@ -191,7 +191,7 @@ describe('MagicPortal', () => {
       document.body.appendChild(anchor)
     })
 
-    it('should append by default', () => {
+    it('should last by default', () => {
       render(
         <MagicPortal anchor="#position-anchor">
           <div data-testid="portal-content">Portal Content</div>
@@ -204,9 +204,9 @@ describe('MagicPortal', () => {
       expect(anchor.contains(portalContent)).toBe(true)
     })
 
-    it('should prepend when position is prepend', () => {
+    it('should first when position is first', () => {
       render(
-        <MagicPortal anchor="#position-anchor" position="prepend">
+        <MagicPortal anchor="#position-anchor" position="first">
           <div data-testid="portal-content">Portal Content</div>
         </MagicPortal>
       )
@@ -389,7 +389,7 @@ describe('MagicPortal', () => {
       document.body.appendChild(anchor)
 
       const { rerender } = render(
-        <MagicPortal anchor="#position-ref-anchor" position="append">
+        <MagicPortal anchor="#position-ref-anchor" position="last">
           <div ref={contentRef} data-testid="portal-content">
             Portal Content
           </div>
@@ -403,7 +403,7 @@ describe('MagicPortal', () => {
       contentRef.mockClear()
 
       rerender(
-        <MagicPortal anchor="#position-ref-anchor" position="prepend">
+        <MagicPortal anchor="#position-ref-anchor" position="first">
           <div ref={contentRef} data-testid="portal-content">
             Portal Content
           </div>
@@ -544,10 +544,10 @@ describe('MagicPortal', () => {
 
       render(
         <div>
-          <MagicPortal anchor="#multi-anchor" position="prepend">
+          <MagicPortal anchor="#multi-anchor" position="first">
             <div data-testid="portal-1">Portal 1</div>
           </MagicPortal>
-          <MagicPortal anchor="#multi-anchor" position="append">
+          <MagicPortal anchor="#multi-anchor" position="last">
             <div data-testid="portal-2">Portal 2</div>
           </MagicPortal>
         </div>

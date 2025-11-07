@@ -26,7 +26,7 @@ React Magic Portal solves these challenges by automatically detecting when targe
 ## Features
 
 - **Dynamic Anchor Detection** - Automatically detects when target elements appear or disappear in the DOM
-- **Multiple Positioning Options** - Support for `append`, `prepend`, `before`, and `after` positioning
+- **Multiple Positioning Options** - Support for `last`, `first`, `before`, and `after` positioning
 - **Flexible Anchor Selection** - Support for CSS selectors, element references, functions, and direct elements
 - **Lifecycle Callbacks** - `onMount` and `onUnmount` callbacks for portal lifecycle management
 - **TypeScript Support** - Full TypeScript support with comprehensive type definitions
@@ -77,11 +77,11 @@ function App() {
         <div>Content before target</div>
       </MagicPortal>
 
-      <MagicPortal anchor="#target" position="prepend">
+      <MagicPortal anchor="#target" position="first">
         <div>Content at start of target</div>
       </MagicPortal>
 
-      <MagicPortal anchor="#target" position="append">
+      <MagicPortal anchor="#target" position="last">
         <div>Content at end of target</div>
       </MagicPortal>
 
@@ -100,7 +100,7 @@ function App() {
 | Prop        | Type                                                                                       | Default         | Description                                                  |
 | ----------- | ------------------------------------------------------------------------------------------ | --------------- | ------------------------------------------------------------ |
 | `anchor`    | `string \| (() => Element \| null) \| Element \| React.RefObject<Element \| null> \| null` | **Required**    | The target element where the portal content will be rendered |
-| `position`  | `'append' \| 'prepend' \| 'before' \| 'after'`                                             | `'append'`      | Position relative to the anchor element                      |
+| `position`  | `'last' \| 'first' \| 'before' \| 'after'`                                             | `'last'`      | Position relative to the anchor element                      |
 | `root`      | `Element`                                                                                  | `document.body` | The root element to observe for DOM mutations                |
 | `children`  | `React.ReactElement \| null`                                               | `undefined`     | A single React element to render in the portal (does not support Fragment)                          |
 | `onMount`   | `(anchor: Element, container: Element) => void`                                            | `undefined`     | Callback fired when the portal is mounted                    |
@@ -150,7 +150,7 @@ const elementRef = useRef(null)
 
 ### Position Options
 
-#### `append` (default)
+#### `last` (default)
 
 Adds content inside the anchor element at the end:
 
@@ -161,7 +161,7 @@ Adds content inside the anchor element at the end:
 </div>
 ```
 
-#### `prepend`
+#### `first`
 
 Adds content inside the anchor element at the beginning:
 
