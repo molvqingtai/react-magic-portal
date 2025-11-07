@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 
 export interface MagicPortalProps {
   anchor: string | (() => Element | null) | Element | React.RefObject<Element | null> | null
-  position?: 'append' | 'prepend' | 'before' | 'after'
+  position?: 'last' | 'first' | 'before' | 'after'
   root?: Element
   children?: React.ReactElement | null
   onMount?: (anchor: Element, container: Element) => void
@@ -48,7 +48,7 @@ const resolveContainer = (anchor: Element | null, position: MagicPortalProps['po
     return null
   }
 
-  return position === 'prepend' || position === 'append' ? anchor : anchor.parentElement
+  return position === 'first' || position === 'last' ? anchor : anchor.parentElement
 }
 
 /**
@@ -72,7 +72,7 @@ const mergeRef = <T extends Element | null>(...refs: (React.Ref<T> | undefined)[
 
 const MagicPortal = ({
   anchor,
-  position = 'append',
+  position = 'last',
   root = document.body,
   children,
   onMount,
@@ -100,10 +100,10 @@ const MagicPortal = ({
       let alreadyPlaced = false
 
       switch (position) {
-        case 'append':
+        case 'last':
           alreadyPlaced = node.parentElement === containerElement && containerElement.lastChild === node
           break
-        case 'prepend':
+        case 'first':
           alreadyPlaced = node.parentElement === containerElement && containerElement.firstChild === node
           break
         case 'before':
@@ -117,8 +117,8 @@ const MagicPortal = ({
       if (!alreadyPlaced) {
         const positionMap = {
           before: 'beforebegin',
-          prepend: 'afterbegin',
-          append: 'beforeend',
+          first: 'afterbegin',
+          last: 'beforeend',
           after: 'afterend'
         } as const
         anchorElement.insertAdjacentElement(positionMap[position], node)

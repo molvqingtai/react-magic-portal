@@ -15,10 +15,10 @@ function PortalContent({ position, ref }: PortalContentProps) {
 
   const getContentText = () => {
     switch (position) {
-      case 'append':
-        return 'Appended Content (inside target, at end)'
-      case 'prepend':
-        return 'Prepended Content (inside target, at beginning)'
+      case 'last':
+        return 'Last Content (inside target, at end)'
+      case 'first':
+        return 'First Content (inside target, at beginning)'
       case 'before':
         return 'Before Content (sibling, before target)'
       case 'after':

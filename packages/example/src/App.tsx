@@ -37,12 +37,12 @@ function App() {
         <PortalContent position="before" />
       </MagicPortal>
 
-      <MagicPortal anchor="#dynamic-anchor" position="prepend" onMount={handleMount} onUnmount={handleUnmount}>
-        <PortalContent position="prepend" />
+      <MagicPortal anchor="#dynamic-anchor" position="first" onMount={handleMount} onUnmount={handleUnmount}>
+        <PortalContent position="first" />
       </MagicPortal>
 
-      <MagicPortal anchor="#dynamic-anchor" position="append" onMount={handleMount} onUnmount={handleUnmount}>
-        <PortalContent position="append" />
+      <MagicPortal anchor="#dynamic-anchor" position="last" onMount={handleMount} onUnmount={handleUnmount}>
+        <PortalContent position="last" />
       </MagicPortal>
 
       <MagicPortal anchor="#dynamic-anchor" position="after" onMount={handleMount} onUnmount={handleUnmount}>
@@ -53,10 +53,10 @@ function App() {
       <div className="instructions">
         <ul>
           <li>
-            <strong>append</strong>: Adds content inside the anchor element at the end
+            <strong>last</strong>: Adds content inside the anchor element at the end
           </li>
           <li>
-            <strong>prepend</strong>: Adds content inside the anchor element at the beginning
+            <strong>first</strong>: Adds content inside the anchor element at the beginning
           </li>
           <li>
             <strong>before</strong>: Adds content as a sibling before the target anchor
