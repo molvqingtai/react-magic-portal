@@ -1,12 +1,12 @@
 {
-  "name": "react-magic-portal",
+  "name": "component",
   "version": "1.0.0",
   "description": "React Portal with dynamic mounting support",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "tsdown src/index.ts --dts --format esm --sourcemap --watch",
-    "build": "tsdown src/index.ts --dts --format esm --sourcemap --minify --clean",
+    "dev": "tsdown src/index.ts --dts --format esm --sourcemap --watch --no-hash",
+    "build": "tsdown src/index.ts --dts --format esm --sourcemap --minify --clean --no-hash",
     "lint": "eslint --fix --cache",
     "check": "tsc --noEmit"
   },
