@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/molvqingtai/react-magic-portal/compare/v1.3.1...v1.4.0) (2026-01-29)
+
+
+### Features
+
+* add Dependabot auto-merge workflow ([e0d0670](https://github.com/molvqingtai/react-magic-portal/commit/e0d06708681861e8d857fc4e0936334faab676d6))
+
 ## [1.3.1](https://github.com/molvqingtai/react-magic-portal/compare/v1.3.0...v1.3.1) (2025-11-07)
 
 
